@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Date Converter & Age Calculator</title>
+    <link rel="stylesheet" href="/pages/tool1/date-tools.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AD-BS Date Converter & Age Calculator</h1>
+        
+        <!-- Date Converter Section -->
+        <div class="section">
+            <h2>Date Converter</h2>
+            <div class="converter-container">
+                <div class="converter-box">
+                    <h3>AD to BS</h3>
+                    <div class="input-group">
+                        <label for="ad-date">AD Date:</label>
+                        <input type="date" id="ad-date">
+                    </div>
+                    <button class="convert-btn" onclick="convertADtoBS()">Convert to BS</button>
+                    <div class="result" id="bs-result">
+                        <p>BS Date: <span>-</span></p>
+                    </div>
+                </div>
+
+                <div class="converter-box">
+                    <h3>BS to AD</h3>
+                    <div class="input-group">
+                        <label for="bs-year">BS Year:</label>
+                        <input type="number" id="bs-year" min="1970" max="2100" placeholder="YYYY">
+                    </div>
+                    <div class="input-group">
+                        <label for="bs-month">Month:</label>
+                        <select id="bs-month" onchange="convertBStoAD()">
+                            <option value="1">Baisakh</option>
+                            <option value="2">Jestha</option>
+                            <option value="3">Ashadh</option>
+                            <option value="4">Shrawan</option>
+                            <option value="5">Bhadra</option>
+                            <option value="6">Ashwin</option>
+                            <option value="7">Kartik</option>
+                            <option value="8">Mangsir</option>
+                            <option value="9">Poush</option>
+                            <option value="10">Magh</option>
+                            <option value="11">Falgun</option>
+                            <option value="12">Chaitra</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="bs-day">Day:</label>
+                        <input type="number" id="bs-day" min="1" max="32" placeholder="DD">
+                    </div>
+                    <button class="convert-btn" onclick="convertBStoAD()">Convert to AD</button>
+                    <div class="result" id="ad-result">
+                        <p>AD Date: <span>-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Age Calculator Section -->
+        <div class="section">
+            <h2>Age Calculator</h2>
+            <div class="calculator-container">
+                <div class="calendar-selector">
+                    <label>Select Calendar:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="ad-calendar" name="calendar" value="AD" checked>
+                        <label for="ad-calendar">AD</label>
+                        <input type="radio" id="bs-calendar" name="calendar" value="BS">
+                        <label for="bs-calendar">BS</label>
+                    </div>
+                </div>
+
+                <div id="ad-dob-inputs">
+                    <div class="input-group">
+                        <label for="ad-dob">Date of Birth (AD):</label>
+                        <input type="date" id="ad-dob">
+                    </div>
+                    <button class="calculate-btn" onclick="calculateAge()">Calculate Age</button>
+                </div>
+
+                <div id="bs-dob-inputs" style="display: none;">
+                    <div class="input-group">
+                        <label for="bs-dob-year">BS Year:</label>
+                        <input type="number" id="bs-dob-year" min="1970" max="2100" placeholder="YYYY">
+                    </div>
+                    <div class="input-group">
+                        <label for="bs-dob-month">Month:</label>
+                        <select id="bs-dob-month">
+                            <option value="1">Baisakh</option>
+                            <option value="2">Jestha</option>
+                            <option value="3">Ashadh</option>
+                            <option value="4">Shrawan</option>
+                            <option value="5">Bhadra</option>
+                            <option value="6">Ashwin</option>
+                            <option value="7">Kartik</option>
+                            <option value="8">Mangsir</option>
+                            <option value="9">Poush</option>
+                            <option value="10">Magh</option>
+                            <option value="11">Falgun</option>
+                            <option value="12">Chaitra</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="bs-dob-day">Day:</label>
+                        <input type="number" id="bs-dob-day" min="1" max="32" placeholder="DD">
+                    </div>
+                    <button class="calculate-btn" onclick="calculateAge()">Calculate Age</button>
+                </div>
+
+                <div class="result" id="age-result">
+                    <p>Age: <span class="years">-</span> years, <span class="months">-</span> months, <span class="days">-</span> days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/pages/tool1/date-tools.js"></script>
+</body>
+</html> 

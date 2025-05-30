@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepal Tools Hub - Your Daily Calculation Companion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 100px 0;
+            color: white;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background-color: rgba(37, 99, 235, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .creator-section {
+            background-color: #f8fafc;
+        }
+
+        .tool-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .footer {
+            background-color: #1e293b;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .hover-white:hover {
+            color: white !important;
+            opacity: 1 !important;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a {
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-calculator me-2"></i>Nepal Tools Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tools">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Your Daily Calculation Companion</h1>
+                    <p class="lead mb-4">Simplify your daily calculations with our comprehensive suite of tools designed specifically for Nepal. From date conversions, financial calculations to land area calculation and length area conversions. we've got you covered.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#tools" class="btn btn-light btn-lg">Explore Tools</a>
+                        <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Calculator Illustration" class="img-fluid" style="max-width: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Tools</h2>
+                <p class="lead text-muted">Discover our collection of specialized calculators</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card tool-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-box">
+                                <i class="fas fa-calendar-alt fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Date Tools</h3>
+                            <p class="text-muted">Convert dates between AD and BS calendars, calculate age, and more with our precise date conversion tools.</p>
+                            <a href="pages/tool1/date-tools.html" class="btn btn-primary mt-3">Use Date Tools</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card tool-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-box">
+                                <i class="fas fa-money-bill-wave fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Financial Calculator</h3>
+                            <p class="text-muted">Calculate profit/loss, simple interest, and other financial metrics with our easy-to-use calculators.</p>
+                            <a href="pages/tool2/financial-tools.html" class="btn btn-primary mt-3">Use Financial Tools</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card tool-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-box">
+                                <i class="fas fa-ruler-combined fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Land Area Tools</h3>
+                            <p class="text-muted">Calculate land area using traditional Nepali measurements for both Terai and Hills regions.</p>
+                            <a href="pages/tool3/land-tools.html" class="btn btn-primary mt-3">Use Land Tools</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card tool-card h-100">
+                        <div class="card-body p-4">
+                            <div class="icon-box">
+                                <i class="fas fa-exchange-alt fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Area & Length Converter</h3>
+                            <p class="text-muted">Convert between different units of area and length measurements, including nepali and some international units.</p>
+                            <a href="pages/tool4/len-area.html" class="btn btn-primary mt-3">Use Converter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-start">
+                        <div class="icon-box me-3">
+                            <i class="fas fa-bolt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="h5 mb-2">Fast & Accurate</h4>
+                            <p class="text-muted mb-0">Get instant, precise calculations for all your needs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-start">
+                        <div class="icon-box me-3">
+                            <i class="fas fa-mobile-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="h5 mb-2">Mobile Friendly</h4>
+                            <p class="text-muted mb-0">Use our tools on any device, anywhere, anytime</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-start">
+                        <div class="icon-box me-3">
+                            <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="h5 mb-2">Free & Secure</h4>
+                            <p class="text-muted mb-0">No cost, no registration, and completely secure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Creator Section -->
+    <section id="about" class="creator-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">About the Creator</h2>
+                    <p class="lead mb-4">Hi! I'm Uday Tharu, I'm a passionate developer dedicated to creating useful tools for the Nepali community. This project was born from the need to simplify daily calculations that are specific to Nepal's context.</p>
+                    <p class="mb-4">My goal is to make these tools accessible to everyone, whether you're a student, business owner, or just someone who needs quick calculations in their daily life.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="https://github.com/udaytharu" class="btn btn-outline-primary">View Projects</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Developer Illustration" class="img-fluid" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">Get in Touch</h2>
+                    <p class="lead text-muted mb-5">Have suggestions or feedback? We'd love to hear from you!</p>
+                    <div class="d-flex justify-content-center gap-4">
+                        <a href="mailto:contact@nepaltoolshub.com" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Email Us
+                        </a>
+                        <a href="https://github.com/udaytharu" class="btn btn-outline-primary btn-lg">
+                            <i class="fab fa-github me-2"></i>GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3 text-white">Nepal Tools Hub</h5>
+                    <p class="text-light opacity-75">Making calculations easier for Nepal</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3 text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light opacity-75 text-decoration-none hover-white">Home</a></li>
+                        <li><a href="#tools" class="text-light opacity-75 text-decoration-none hover-white">Tools</a></li>
+                        <li><a href="#about" class="text-light opacity-75 text-decoration-none hover-white">About</a></li>
+                        <li><a href="#contact" class="text-light opacity-75 text-decoration-none hover-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-3 text-white">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.facebook.com/uday.tharu.73" class="text-light opacity-75 hover-white" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://x.com/UdayTharu813" class="text-light opacity-75 hover-white" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://github.com/udaytharu" class="text-light opacity-75 hover-white" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/in/uday-tharu-25b9042ba/" class="text-light opacity-75 hover-white" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light opacity-25">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-light opacity-75" target="_blank">&copy; 2024 <a href="http://udayrajchaudhary.com.np/">uday-studio</a>. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-light opacity-75">Made with <span class="text-danger">❤️</span> for Nepal</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

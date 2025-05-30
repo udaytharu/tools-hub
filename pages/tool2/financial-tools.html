@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculator</title>
+    <link rel="stylesheet" href="/pages/tool2/financial-tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Calculator</h1>
+        
+        <div class="calculator-container">
+            <div class="calculator-type">
+                <select id="calculatorType" onchange="showCalculator()">
+                    <option value="">Select Calculator Type</option>
+                    <optgroup label="Basic Calculations">
+                        <option value="profitLoss">Profit and Loss</option>
+                        <option value="tax">Tax Calculator</option>
+                        <option value="vat">VAT Calculator</option>
+                        <option value="simpleInterest">Simple Interest</option>
+                        <option value="compoundInterest">Compound Interest</option>
+                        <option value="discount">Discount Calculator</option>
+                        <option value="markup">Markup Calculator</option>
+                    </optgroup>
+                    <optgroup label="Advanced Calculations">
+                        <option value="loanEMI">Loan EMI Calculator</option>
+                        <option value="investment">Investment Returns</option>
+                        <option value="depreciation">Depreciation Calculator</option>
+                        <option value="stock">Stock Market Calculator</option>
+                        <option value="mortgage">Mortgage Calculator</option>
+                        <option value="retirement">Retirement Planning</option>
+                        <option value="inflation">Inflation Calculator</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <!-- Profit and Loss Calculator -->
+            <div id="profitLoss" class="calculator-section hidden">
+                <h2>Profit and Loss Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="costPrice" placeholder="Cost Price (₹)" step="0.01">
+                    <input type="number" id="sellingPrice" placeholder="Selling Price (₹)" step="0.01">
+                    <button onclick="calculateProfitLoss()">Calculate</button>
+                </div>
+                <div id="profitLossResult" class="result"></div>
+            </div>
+
+            <!-- Tax Calculator -->
+            <div id="tax" class="calculator-section hidden">
+                <h2>Tax Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="income" placeholder="Income (₹)" step="0.01">
+                    <input type="number" id="taxRate" placeholder="Tax Rate (%)" step="0.01">
+                    <button onclick="calculateTax()">Calculate</button>
+                </div>
+                <div id="taxResult" class="result"></div>
+            </div>
+
+            <!-- VAT Calculator -->
+            <div id="vat" class="calculator-section hidden">
+                <h2>VAT Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="price" placeholder="Price (₹)" step="0.01">
+                    <input type="number" id="vatRate" placeholder="VAT Rate (%)" step="0.01">
+                    <button onclick="calculateVAT()">Calculate</button>
+                </div>
+                <div id="vatResult" class="result"></div>
+            </div>
+
+            <!-- Simple Interest Calculator -->
+            <div id="simpleInterest" class="calculator-section hidden">
+                <h2>Simple Interest Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="principalSI" placeholder="Principal Amount (₹)" step="0.01">
+                    <input type="number" id="rateSI" placeholder="Interest Rate (%)" step="0.01">
+                    <input type="number" id="timeSI" placeholder="Time (years)" step="0.01">
+                    <button onclick="calculateSimpleInterest()">Calculate</button>
+                </div>
+                <div id="simpleInterestResult" class="result"></div>
+            </div>
+
+            <!-- Compound Interest Calculator -->
+            <div id="compoundInterest" class="calculator-section hidden">
+                <h2>Compound Interest Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="principalCI" placeholder="Principal Amount (₹)" step="0.01">
+                    <input type="number" id="rateCI" placeholder="Interest Rate (%)" step="0.01">
+                    <input type="number" id="timeCI" placeholder="Time (years)" step="0.01">
+                    <input type="number" id="compounds" placeholder="Compounds per year" value="1">
+                    <button onclick="calculateCompoundInterest()">Calculate</button>
+                </div>
+                <div id="compoundInterestResult" class="result"></div>
+            </div>
+
+            <!-- Discount Calculator -->
+            <div id="discount" class="calculator-section hidden">
+                <h2>Discount Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="originalPrice" placeholder="Original Price (₹)" step="0.01">
+                    <input type="number" id="discountPercentage" placeholder="Discount (%)" step="0.01">
+                    <button onclick="calculateDiscount()">Calculate</button>
+                </div>
+                <div id="discountResult" class="result"></div>
+            </div>
+
+            <!-- Markup Calculator -->
+            <div id="markup" class="calculator-section hidden">
+                <h2>Markup Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="costPriceMarkup" placeholder="Cost Price (₹)" step="0.01">
+                    <input type="number" id="markupPercentage" placeholder="Markup (%)" step="0.01">
+                    <button onclick="calculateMarkup()">Calculate</button>
+                </div>
+                <div id="markupResult" class="result"></div>
+            </div>
+
+            <!-- Loan EMI Calculator -->
+            <div id="loanEMI" class="calculator-section hidden">
+                <h2>Loan EMI Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="loanAmount" placeholder="Loan Amount (₹)" step="0.01">
+                    <input type="number" id="interestRate" placeholder="Annual Interest Rate (%)" step="0.01">
+                    <input type="number" id="loanTerm" placeholder="Loan Term (years)" step="0.01">
+                    <select id="paymentFrequency">
+                        <option value="12">Monthly</option>
+                        <option value="4">Quarterly</option>
+                        <option value="2">Semi-Annual</option>
+                        <option value="1">Annual</option>
+                    </select>
+                    <button onclick="calculateEMI()">Calculate EMI</button>
+                </div>
+                <div id="emiResult" class="result"></div>
+            </div>
+
+            <!-- Investment Returns Calculator -->
+            <div id="investment" class="calculator-section hidden">
+                <h2>Investment Returns Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="initialInvestment" placeholder="Initial Investment (₹)" step="0.01">
+                    <input type="number" id="monthlyContribution" placeholder="Monthly Contribution (₹)" step="0.01">
+                    <input type="number" id="expectedReturn" placeholder="Expected Annual Return (%)" step="0.01">
+                    <input type="number" id="investmentPeriod" placeholder="Investment Period (years)" step="0.01">
+                    <input type="number" id="inflationRate" placeholder="Expected Inflation Rate (%)" step="0.01">
+                    <button onclick="calculateInvestmentReturns()">Calculate Returns</button>
+                </div>
+                <div id="investmentResult" class="result"></div>
+            </div>
+
+            <!-- Depreciation Calculator -->
+            <div id="depreciation" class="calculator-section hidden">
+                <h2>Depreciation Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="assetCost" placeholder="Asset Cost (₹)" step="0.01">
+                    <input type="number" id="salvageValue" placeholder="Salvage Value (₹)" step="0.01">
+                    <input type="number" id="usefulLife" placeholder="Useful Life (years)" step="0.01">
+                    <select id="depreciationMethod">
+                        <option value="straight">Straight Line</option>
+                        <option value="declining">Declining Balance</option>
+                        <option value="sum">Sum of Years' Digits</option>
+                    </select>
+                    <button onclick="calculateDepreciation()">Calculate Depreciation</button>
+                </div>
+                <div id="depreciationResult" class="result"></div>
+            </div>
+
+            <!-- Stock Market Calculator -->
+            <div id="stock" class="calculator-section hidden">
+                <h2>Stock Market Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="stockPrice" placeholder="Stock Price (₹)" step="0.01">
+                    <input type="number" id="shares" placeholder="Number of Shares" step="0.01">
+                    <input type="number" id="dividendYield" placeholder="Dividend Yield (%)" step="0.01">
+                    <input type="number" id="growthRate" placeholder="Expected Growth Rate (%)" step="0.01">
+                    <input type="number" id="holdingPeriod" placeholder="Holding Period (years)" step="0.01">
+                    <button onclick="calculateStockReturns()">Calculate Returns</button>
+                </div>
+                <div id="stockResult" class="result"></div>
+            </div>
+
+            <!-- Mortgage Calculator -->
+            <div id="mortgage" class="calculator-section hidden">
+                <h2>Mortgage Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="propertyValue" placeholder="Property Value (₹)" step="0.01">
+                    <input type="number" id="downPayment" placeholder="Down Payment (₹)" step="0.01">
+                    <input type="number" id="mortgageRate" placeholder="Mortgage Rate (%)" step="0.01">
+                    <input type="number" id="mortgageTerm" placeholder="Mortgage Term (years)" step="0.01">
+                    <input type="number" id="propertyTax" placeholder="Annual Property Tax (%)" step="0.01">
+                    <input type="number" id="insurance" placeholder="Annual Insurance (%)" step="0.01">
+                    <button onclick="calculateMortgage()">Calculate Mortgage</button>
+                </div>
+                <div id="mortgageResult" class="result"></div>
+            </div>
+
+            <!-- Retirement Planning Calculator -->
+            <div id="retirement" class="calculator-section hidden">
+                <h2>Retirement Planning Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="currentAge" placeholder="Current Age" step="0.01">
+                    <input type="number" id="retirementAge" placeholder="Retirement Age" step="0.01">
+                    <input type="number" id="currentSavings" placeholder="Current Savings (₹)" step="0.01">
+                    <input type="number" id="monthlySavings" placeholder="Monthly Savings (₹)" step="0.01">
+                    <input type="number" id="expectedReturn" placeholder="Expected Return (%)" step="0.01">
+                    <input type="number" id="inflationRate" placeholder="Expected Inflation (%)" step="0.01">
+                    <input type="number" id="lifeExpectancy" placeholder="Life Expectancy" step="0.01">
+                    <button onclick="calculateRetirement()">Calculate Retirement Plan</button>
+                </div>
+                <div id="retirementResult" class="result"></div>
+            </div>
+
+            <!-- Inflation Calculator -->
+            <div id="inflation" class="calculator-section hidden">
+                <h2>Inflation Calculator</h2>
+                <div class="input-group">
+                    <input type="number" id="presentValue" placeholder="Present Value (₹)" step="0.01">
+                    <input type="number" id="inflationRate" placeholder="Inflation Rate (%)" step="0.01">
+                    <input type="number" id="years" placeholder="Number of Years" step="0.01">
+                    <button onclick="calculateInflation()">Calculate Future Value</button>
+                </div>
+                <div id="inflationResult" class="result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/pages/tool2/financial-tools.js"></script>
+</body>
+</html> 

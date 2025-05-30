@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polygon Area Calculator</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <link rel="stylesheet" href="/pages/tool3/land-tools.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Land Area Calculator</h1>
+    </header>
+    
+    <div class="main-content">
+      <div class="controls-panel">
+        <div class="control-group">
+          <h3>Polygon Settings</h3>
+          <div class="input-group">
+            <label for="sides">Number of Sides:</label>
+            <input type="number" id="sides" min="3" max="12" value="4">
+          </div>
+          <div class="input-group">
+            <label for="unit-type">Unit Type:</label>
+            <select id="unit-type">
+              <option value="cm">Centimeters (cm)</option>
+              <option value="mm">Millimeters (mm)</option>
+              <option value="inch">Inches (in)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="base-measurement">Scale ratio:</label>
+            <input type="number" id="base-measurement" min="1" value="500" step="1">
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button class="primary-btn" onclick="drawPolygon()">Draw Polygon</button>
+          <button class="secondary-btn" onclick="editMode()">Edit Mode</button>
+          <button class="secondary-btn" onclick="triangulatePolygon()">Triangulate</button>
+        </div>
+      </div>
+
+      <div class="workspace">
+        <div id="canvas-container"></div>
+        
+        <div class="results-panel">
+          <table id="side-table">
+            <thead>
+              <tr>
+                <th>Side</th>
+                <th>Scale Value</th>
+                <th>Enter Length</th>
+                <th>Final Length</th>
+              </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+          </table>
+          
+          <button class="calculate-btn" id="calculate-area" onclick="calculateArea()" disabled>Calculate Area</button>
+          <div id="area-display">Area: Not calculated</div>
+          <button class="transfer-btn" id="transfer-to-converter" onclick="transferToConverter()" style="display: none;">
+            Use this value in converter
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="unit-converter-section">
+    <div class="converter-box">
+      <h2>Area Unit Converter</h2>
+      <div class="converter-input">
+        <div class="input-group">
+          <label>Enter Area Value:</label>
+          <input type="number" id="areaInput" placeholder="Enter area value" step="0.001">
+          <select id="fromUnit">
+            <option value="mm2">Square Millimeters (mm²)</option>
+            <option value="cm2">Square Centimeters (cm²)</option>
+            <option value="in2">Square Inches (in²)</option>
+          </select>
+        </div>
+        <button class="convert-btn" onclick="convertArea()">Convert</button>
+      </div>
+      <div class="converter-results">
+        <div class="result-box">
+          <h3>Square Meters</h3>
+          <div class="result-value" id="meterResult">0</div>
+          <div class="result-unit">m²</div>
+        </div>
+        <div class="result-box">
+          <h3>Square Feet</h3>
+          <div class="result-value" id="feetResult">0</div>
+          <div class="result-unit">ft²</div>
+        </div>
+        <div class="result-box">
+          <h3>Terai Region</h3>
+          <div class="result-value" id="teraiResult">0</div>
+          <div class="result-unit">Bigha</div>
+          <div class="sub-result">
+            <span id="kathaResult">0 Katha</span>
+            <span id="dhurResult">0 Dhur</span>
+          </div>
+        </div>
+        <div class="result-box">
+          <h3>Hill Region</h3>
+          <div class="result-value" id="hillResult">0</div>
+          <div class="result-unit">Ropani</div>
+          <div class="sub-result">
+            <span id="annaResult">0 Anna</span>
+            <span id="paisaResult">0 Paisa</span>
+            <span id="daamResult">0 Daam</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/pages/tool3/land-tools.js"></script>
+</body>
+</html>

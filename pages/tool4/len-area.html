@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nepali Measurement Converter</title>
+    <link rel="stylesheet" href="/pages/tool4/len-area.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nepali Measurement Converter</h1>
+        
+        <div class="converter-section">
+            <h2>Length Converter</h2>
+            <div class="converter-box">
+                <div class="input-group">
+                    <input type="number" id="length-input" placeholder="Enter value">
+                    <select id="length-from">
+                        <option value="angul">Angul (अंगुल)</option>
+                        <option value="bitta">Bitta (बित्ता)</option>
+                        <option value="haat">Haat (हात)</option>
+                        <option value="dhanush">Dhanush (धनुष)</option>
+                        <option value="kos">Kos (कोस)</option>
+                        <option value="meter">Meter</option>
+                        <option value="kilometer">Kilometer</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="millimeter">Millimeter</option>
+                        <option value="inch">Inch</option>
+                        <option value="foot">Foot</option>
+                        <option value="yard">Yard</option>
+                        <option value="mile">Mile</option>
+                    </select>
+                </div>
+                <div class="swap-btn" onclick="swapLengthUnits()">⇄</div>
+                <div class="input-group">
+                    <input type="number" id="length-output" readonly>
+                    <select id="length-to">
+                        <option value="meter">Meter</option>
+                        <option value="kilometer">Kilometer</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="millimeter">Millimeter</option>
+                        <option value="inch">Inch</option>
+                        <option value="foot">Foot</option>
+                        <option value="yard">Yard</option>
+                        <option value="mile">Mile</option>
+                        <option value="angul">Angul (अंगुल)</option>
+                        <option value="bitta">Bitta (बित्ता)</option>
+                        <option value="haat">Haat (हात)</option>
+                        <option value="dhanush">Dhanush (धनुष)</option>
+                        <option value="kos">Kos (कोस)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="converter-section">
+            <h2>Area Converter</h2>
+            <div class="converter-box">
+                <div class="input-group">
+                    <input type="number" id="area-input" placeholder="Enter value">
+                    <select id="area-from">
+                        <option value="dhur">Dhur (धुर)</option>
+                        <option value="kattha">Kattha (कठ्ठा)</option>
+                        <option value="bigha">Bigha (बिघा)</option>
+                        <option value="ropani">Ropani (रोपनी)</option>
+                        <option value="aana">Aana (आना)</option>
+                        <option value="paisa">Paisa (पैसा)</option>
+                        <option value="daam">Daam (दाम)</option>
+                        <option value="meter2">Square Meter</option>
+                        <option value="kilometer2">Square Kilometer</option>
+                        <option value="centimeter2">Square Centimeter</option>
+                        <option value="hectare">Hectare</option>
+                        <option value="acre">Acre</option>
+                        <option value="foot2">Square Foot</option>
+                        <option value="yard2">Square Yard</option>
+                        <option value="mile2">Square Mile</option>
+                    </select>
+                </div>
+                <div class="swap-btn" onclick="swapAreaUnits()">⇄</div>
+                <div class="input-group">
+                    <input type="number" id="area-output" readonly>
+                    <select id="area-to">
+                        <option value="meter2">Square Meter</option>
+                        <option value="kilometer2">Square Kilometer</option>
+                        <option value="centimeter2">Square Centimeter</option>
+                        <option value="hectare">Hectare</option>
+                        <option value="acre">Acre</option>
+                        <option value="foot2">Square Foot</option>
+                        <option value="yard2">Square Yard</option>
+                        <option value="mile2">Square Mile</option>
+                        <option value="dhur">Dhur (धुर)</option>
+                        <option value="kattha">Kattha (कठ्ठा)</option>
+                        <option value="bigha">Bigha (बिघा)</option>
+                        <option value="ropani">Ropani (रोपनी)</option>
+                        <option value="aana">Aana (आना)</option>
+                        <option value="paisa">Paisa (पैसा)</option>
+                        <option value="daam">Daam (दाम)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="converter-section terai-section">
+            <h2>Terai Region Units</h2>
+            <div class="manual-input-section">
+                <div class="unit-input-group">
+                    <label>Enter Area:</label>
+                    <div class="input-with-unit">
+                        <input type="number" id="terai-area" placeholder="Enter area" oninput="convertTeraiManual()">
+                        <select id="terai-input-unit" onchange="convertTeraiManual()">
+                            <optgroup label="International Units">
+                                <option value="meter2" selected>Square Meter</option>
+                                <option value="kilometer2">Square Kilometer</option>
+                                <option value="centimeter2">Square Centimeter</option>
+                                <option value="millimeter2">Square Millimeter</option>
+                                <option value="inch2">Square Inch</option>
+                                <option value="hectare">Hectare</option>
+                                <option value="acre">Acre</option>
+                                <option value="foot2">Square Foot</option>
+                                <option value="yard2">Square Yard</option>
+                                <option value="mile2">Square Mile</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="result-box">
+                    <div class="unit-group">
+                        <h4>Terai Region Units</h4>
+                        <div class="unit-result">
+                            <span class="unit-label">Bigha (बिघा):</span>
+                            <span id="terai-bigha-result">0</span>
+                        </div>
+                        <div class="unit-result">
+                            <span class="unit-label">Kattha (कठ्ठा):</span>
+                            <span id="terai-kattha-result">0</span>
+                        </div>
+                        <div class="unit-result">
+                            <span class="unit-label">Dhur (धुर):</span>
+                            <span id="terai-dhur-result">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="converter-section hill-section">
+            <h2>Hill Region Units</h2>
+            <div class="manual-input-section">
+                <div class="unit-input-group">
+                    <label>Enter Area:</label>
+                    <div class="input-with-unit">
+                        <input type="number" id="hill-area" placeholder="Enter area" oninput="convertHillManual()">
+                        <select id="hill-input-unit" onchange="convertHillManual()">
+                            <optgroup label="International Units">
+                                <option value="meter2" selected>Square Meter</option>
+                                <option value="kilometer2">Square Kilometer</option>
+                                <option value="centimeter2">Square Centimeter</option>
+                                <option value="millimeter2">Square Millimeter</option>
+                                <option value="inch2">Square Inch</option>
+                                <option value="hectare">Hectare</option>
+                                <option value="acre">Acre</option>
+                                <option value="foot2">Square Foot</option>
+                                <option value="yard2">Square Yard</option>
+                                <option value="mile2">Square Mile</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="result-box">
+                    <div class="unit-group">
+                        <h4>Hill Region Units</h4>
+                        <div class="unit-result">
+                            <span class="unit-label">Ropani (रोपनी):</span>
+                            <span id="hill-ropani-result">0</span>
+                        </div>
+                        <div class="unit-result">
+                            <span class="unit-label">Aana (आना):</span>
+                            <span id="hill-aana-result">0</span>
+                        </div>
+                        <div class="unit-result">
+                            <span class="unit-label">Paisa (पैसा):</span>
+                            <span id="hill-paisa-result">0</span>
+                        </div>
+                        <div class="unit-result">
+                            <span class="unit-label">Daam (दाम):</span>
+                            <span id="hill-daam-result">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Traditional Nepali Units</h3>
+            <div class="unit-info">
+                <h4>Length Units:</h4>
+                <ul>
+                    <li>1 Angul (अंगुल) = 1.905 cm</li>
+                    <li>1 Bitta (बित्ता) = 4 Angul = 7.62 cm</li>
+                    <li>1 Haat (हात) = 2 Bitta = 15.24 cm</li>
+                    <li>1 Dhanush (धनुष) = 4 Haat = 60.96 cm</li>
+                    <li>1 Kos (कोस) = 2000 Dhanush = 1.2192 km</li>
+                    <li>1 Meter = 100 cm = 3.28084 feet</li>
+                    <li>1 Kilometer = 1000 meters = 0.621371 miles</li>
+                    <li>1 Foot = 12 inches = 30.48 cm</li>
+                    <li>1 Yard = 3 feet = 91.44 cm</li>
+                    <li>1 Mile = 1.60934 km</li>
+                </ul>
+                <h4>Area Units:</h4>
+                <ul>
+                    <li>1 Dhur (धुर) = 16.93 m²</li>
+                    <li>1 Kattha (कठ्ठा) = 20 Dhur = 338.63 m²</li>
+                    <li>1 Bigha (बिघा) = 20 Kattha = 6772.63 m²</li>
+                    <li>1 Ropani (रोपनी) = 5476 m²</li>
+                    <li>1 Aana (आना) = 1/16 Ropani = 342.25 m²</li>
+                    <li>1 Paisa (पैसा) = 1/4 Aana = 85.56 m²</li>
+                    <li>1 Daam (दाम) = 1/4 Paisa = 21.39 m²</li>
+                    <li>1 Square Meter = 10.7639 square feet</li>
+                    <li>1 Hectare = 10,000 m² = 2.47105 acres</li>
+                    <li>1 Acre = 4046.86 m²</li>
+                    <li>1 Square Kilometer = 100 hectares</li>
+                    <li>1 Square Mile = 2.58999 km²</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/pages/tool4/len-area.js"></script>
+</body>
+</html> 
