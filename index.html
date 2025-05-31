@@ -97,6 +97,334 @@
         .footer a:hover {
             transform: translateY(-2px);
         }
+
+        /* New Tool Section Styles */
+        .tools-section {
+            background: linear-gradient(to bottom, #f8fafc, #ffffff);
+            padding: 6rem 0;
+        }
+
+        .tool-card {
+            background: white;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-card:hover::before {
+            opacity: 1;
+        }
+
+        .tool-card .card-body {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .icon-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(59, 130, 246, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .tool-card:hover .icon-box {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(59, 130, 246, 0.15));
+        }
+
+        .tool-card .icon-box i {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tool-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .tool-card p {
+            color: #64748b;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-card .btn-primary {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border: none;
+            transition: all 0.4s ease;
+        }
+
+        .tool-card .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .tools-section {
+                padding: 4rem 0;
+            }
+
+            .tool-card .card-body {
+                padding: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Tools Dropdown Styles */
+        .tools-dropdown .dropdown-menu {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            min-width: 280px;
+            margin-top: 0.5rem;
+        }
+
+        .tools-dropdown .dropdown-item {
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            margin: 0.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #1e293b;
+            transition: all 0.2s ease;
+        }
+
+        .tools-dropdown .dropdown-item i {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 8px;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .tools-dropdown .dropdown-item:hover {
+            background: rgba(37, 99, 235, 0.05);
+            transform: translateX(5px);
+        }
+
+        .tools-dropdown .dropdown-item:hover i {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .tools-dropdown .dropdown-item .tool-info {
+            flex: 1;
+        }
+
+        .tools-dropdown .dropdown-item .tool-name {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+            display: block;
+        }
+
+        .tools-dropdown .dropdown-item .tool-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .tools-dropdown .dropdown-menu {
+                background: transparent;
+                box-shadow: none;
+                padding: 0.5rem 0;
+                border-radius: 0;
+            }
+
+            .tools-dropdown .dropdown-item {
+                color: white;
+                padding: 0.6rem 1rem;
+            }
+
+            .tools-dropdown .dropdown-item i {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+            }
+
+            .tools-dropdown .dropdown-item:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .tools-dropdown .dropdown-item:hover i {
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+            .tools-dropdown .dropdown-item .tool-desc {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        /* Update Contributor Section Styles to match Creator size */
+        .contributors-section {
+            background: #f8fafc;
+            padding: 5rem 0;  /* Match creator section padding */
+            margin-top: 2rem;
+        }
+
+        .contributor-avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 0;  /* Removed padding */
+            overflow: hidden;  /* Ensure image stays within bounds */
+        }
+
+        .contributor-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;  /* Removed border */
+        }
+
+        .contributor-info {
+            padding-left: 3rem;  /* Increased padding */
+        }
+
+        .contributor-name {
+            font-size: 2.5rem;  /* Increased font size */
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .contributor-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;  /* Increased font size */
+        }
+
+        .contributor-bio {
+            color: #64748b;
+            font-size: 1.2rem;  /* Increased font size */
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contributor-social {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contributor-social a {
+            width: 48px;  /* Increased icon size */
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.4rem;  /* Increased icon size */
+        }
+
+        @media (max-width: 991px) {
+            .contributors-section {
+                padding: 3rem 0;
+            }
+
+            .contributor-avatar {
+                width: 250px;  /* Slightly smaller on mobile */
+                height: 250px;
+            }
+
+            .contributor-info {
+                padding-left: 0;
+                text-align: center;
+                margin-top: 2.5rem;
+            }
+
+            .contributor-name {
+                font-size: 2rem;
+            }
+
+            .contributor-role {
+                font-size: 1.2rem;
+            }
+
+            .contributor-bio {
+                font-size: 1.1rem;
+            }
+
+            .contributor-social {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contributor-avatar {
+                width: 200px;  /* Even smaller on mobile */
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,8 +442,48 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tools">Tools</a>
+                    <li class="nav-item dropdown tools-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="pages/tool1/date-tools.html">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <div class="tool-info">
+                                        <span class="tool-name">Date Converter</span>
+                                        <span class="tool-desc">Convert between AD and BS dates</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="pages/tool2/financial-tools.html">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <div class="tool-info">
+                                        <span class="tool-name">Financial Calculator</span>
+                                        <span class="tool-desc">Calculate profit, loss, and interest</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="pages/tool3/land-tools.html">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <div class="tool-info">
+                                        <span class="tool-name">Land Calculator</span>
+                                        <span class="tool-desc">Calculate land areas in Nepali units</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="pages/tool4/len-area.html">
+                                    <i class="fas fa-exchange-alt"></i>
+                                    <div class="tool-info">
+                                        <span class="tool-name">Unit Converter</span>
+                                        <span class="tool-desc">Convert between different units</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
@@ -148,59 +516,59 @@
     </section>
 
     <!-- Tools Section -->
-    <section id="tools" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Our Tools</h2>
-                <p class="lead text-muted">Discover our collection of specialized calculators</p>
+    <section id="tools" class="tools-section">
+        <div class="container" style="max-width: 1400px;">
+            <div class="section-title">
+                <h2>Our Powerful Tools</h2>
+                <p>Discover our collection of specialized calculators designed to make your daily calculations easier and more accurate</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
-                    <div class="card tool-card h-100">
-                        <div class="card-body p-4">
+                    <div class="tool-card h-100">
+                        <div class="card-body">
                             <div class="icon-box">
-                                <i class="fas fa-calendar-alt fa-2x text-primary"></i>
+                                <i class="fas fa-calendar-alt"></i>
                             </div>
-                            <h3 class="h4 mb-3">Date Tools</h3>
-                            <p class="text-muted">Convert dates between AD and BS calendars, calculate age, and more with our precise date conversion tools.</p>
-                            <a href="pages/tool1/date-tools.html" class="btn btn-primary mt-3">Use Date Tools</a>
+                            <h3>Date Converter</h3>
+                            <p>Convert dates between AD and BS calendars with precision. Calculate age and handle dates from BS 1970 to BS 2100.</p>
+                            <a href="pages/tool1/date-tools.html" class="btn btn-primary">Use Converter</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="card tool-card h-100">
-                        <div class="card-body p-4">
+                    <div class="tool-card h-100">
+                        <div class="card-body">
                             <div class="icon-box">
-                                <i class="fas fa-money-bill-wave fa-2x text-primary"></i>
+                                <i class="fas fa-money-bill-wave"></i>
                             </div>
-                            <h3 class="h4 mb-3">Financial Calculator</h3>
-                            <p class="text-muted">Calculate profit/loss, simple interest, and other financial metrics with our easy-to-use calculators.</p>
-                            <a href="pages/tool2/financial-tools.html" class="btn btn-primary mt-3">Use Financial Tools</a>
+                            <h3>Financial Calculator</h3>
+                            <p>Calculate profit/loss, interest rates, and other financial metrics with our comprehensive financial tools.</p>
+                            <a href="pages/tool2/financial-tools.html" class="btn btn-primary">Calculate Now</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="card tool-card h-100">
-                        <div class="card-body p-4">
+                    <div class="tool-card h-100">
+                        <div class="card-body">
                             <div class="icon-box">
-                                <i class="fas fa-ruler-combined fa-2x text-primary"></i>
+                                <i class="fas fa-ruler-combined"></i>
                             </div>
-                            <h3 class="h4 mb-3">Land Area Tools</h3>
-                            <p class="text-muted">Calculate land area using traditional Nepali measurements for both Terai and Hills regions.</p>
-                            <a href="pages/tool3/land-tools.html" class="btn btn-primary mt-3">Use Land Tools</a>
+                            <h3>Land Calculator</h3>
+                            <p>Calculate land areas using traditional Nepali measurements for both Terai and Hills regions accurately.</p>
+                            <a href="pages/tool3/land-tools.html" class="btn btn-primary">Measure Land</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
-                    <div class="card tool-card h-100">
-                        <div class="card-body p-4">
+                    <div class="tool-card h-100">
+                        <div class="card-body">
                             <div class="icon-box">
-                                <i class="fas fa-exchange-alt fa-2x text-primary"></i>
+                                <i class="fas fa-exchange-alt"></i>
                             </div>
-                            <h3 class="h4 mb-3">Area & Length Converter</h3>
-                            <p class="text-muted">Convert between different units of area and length measurements, including nepali and some international units.</p>
-                            <a href="pages/tool4/len-area.html" class="btn btn-primary mt-3">Use Converter</a>
+                            <h3>Unit Converter</h3>
+                            <p>Convert between different units of area and length measurements, including Nepali and international units.</p>
+                            <a href="pages/tool4/len-area.html" class="btn btn-primary">Convert Units</a>
                         </div>
                     </div>
                 </div>
@@ -252,10 +620,11 @@
     <!-- About Creator Section -->
     <section id="about" class="creator-section py-5">
         <div class="container">
-            <div class="row align-items-center">
+            <!-- Creator Info -->
+            <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
                     <h2 class="display-5 fw-bold mb-4">About the Creator</h2>
-                    <p class="lead mb-4">Hi! I'm Uday Tharu, I'm a passionate developer dedicated to creating useful tools for the Nepali community. This project was born from the need to simplify daily calculations that are specific to Nepal's context.</p>
+                    <p class="lead mb-4">Hi! I'm <span style="font-weight: bold;">Uday Tharu</span>, I'm a passionate developer dedicated to creating useful tools for the Nepali community. This project was born from the need to simplify daily calculations that are specific to Nepal's context.</p>
                     <p class="mb-4">My goal is to make these tools accessible to everyone, whether you're a student, business owner, or just someone who needs quick calculations in their daily life.</p>
                     <div class="d-flex gap-3">
                         <a href="#contact" class="btn btn-primary">Get in Touch</a>
@@ -264,6 +633,31 @@
                 </div>
                 <div class="col-lg-6 text-center">
                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Developer Illustration" class="img-fluid" style="max-width: 300px;">
+                </div>
+            </div>
+
+            <!-- Update Contributor Section -->
+            <div class="contributors-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 text-center">
+                            <div class="contributor-avatar">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Contributor Avatar">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="contributor-info">
+                                <h2 class="display-5 fw-bold mb-4">About Contributor</h2>
+                                <h3 class="contributor-name">Aman Tharu</h3>
+                                <div class="contributor-role">Civil Engineer</div>
+                                <p class="contributor-bio">A dedicated civil engineer who has contributed significantly to the accuracy of calculations and provided valuable mathematical and logical resources for the tools. His expertise in engineering calculations has helped ensure the precision and reliability of our tools, making them more practical and useful for professionals in the field.</p>
+                                <div class="contributor-social">
+                                    <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -277,7 +671,7 @@
                     <h2 class="display-5 fw-bold mb-4">Get in Touch</h2>
                     <p class="lead text-muted mb-5">Have suggestions or feedback? We'd love to hear from you!</p>
                     <div class="d-flex justify-content-center gap-4">
-                        <a href="mailto:contact@nepaltoolshub.com" class="btn btn-primary btn-lg">
+                        <a href="mailto:udaytharu813@gmail.com" class="btn btn-primary btn-lg">
                             <i class="fas fa-envelope me-2"></i>Email Us
                         </a>
                         <a href="https://github.com/udaytharu" class="btn btn-outline-primary btn-lg">
